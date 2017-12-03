@@ -14,10 +14,19 @@ UCLASS()
 class BATTLETANK_API ATankPlayerController : public APlayerController
 {
 	GENERATED_BODY()
-	
-public:
+
+private:
 	ATank* GetControlledTank() const;
 
+protected:
+	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-	
+
+public:
+	// Called every frame
+	virtual void Tick(float DeltaTime) override;
+
+	// Start the tank moving to the barrel so that a shot would hit where
+	// the crosshair intersects the world
+	void AimTowardsCrosshair();
 };
