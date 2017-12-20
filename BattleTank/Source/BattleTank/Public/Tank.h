@@ -30,14 +30,20 @@ protected:
 
 
 public:	
+	
+
+	void AimAt(FVector HitLocation);
+
+	UFUNCTION(BlueprintCallable, Category = Setup)
+	void SetBarrelReference(UStaticMeshComponent* Barrel);
+
+private:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-	void AimAt(FVector HitLocation);
-
-	UFUNCTION(BlueprintCallable, Category = Setup)
-	void SetBarrelReference(UStaticMeshComponent* Barrel);
+	UPROPERTY(EditAnywhere, Category = Firing)
+		float LaunchSpeed = 100000; // TODO find sensible default
 };
