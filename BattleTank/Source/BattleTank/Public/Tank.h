@@ -8,7 +8,6 @@
 
 
 
-
 // Forward declarations
 class UTankBarrel;
 class UTankTurret;
@@ -29,7 +28,6 @@ protected:
 	virtual void BeginPlay() override;
 
 	UTankAimingComponent* TankAimingComponent = nullptr;
-
 
 public:	
 	
